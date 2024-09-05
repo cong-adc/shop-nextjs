@@ -26,7 +26,9 @@ export default function Header() {
   return (
     <div className="flex items-center justify-between py-4 max-w-7xl mx-auto">
       <div className="w-1/3">
-        <Image src="/images/logo.png" width={128} height={42} />
+        <Link href="/">
+          <Image src="/images/logo.png" width={128} height={42} />
+        </Link>
       </div>
       <div className="flex-1 justify-center flex items-center gap-6">
         {menus.map((menu) => (

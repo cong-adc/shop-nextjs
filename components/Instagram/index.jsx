@@ -18,7 +18,7 @@ function Instagram() {
     "/images/instagram1.png",
   ];
   return (
-    <div className="mt-24 max-w-7xl mx-auto">
+    <div className="mt-24 max-w-7xl mx-auto mb-10">
       <Title title="Event promotion" subTitle="@yourinstagram_offical" />
 
       <div className="grid grid-cols-2 md:grid-cols-6 gap-2 md:gap-4 mt-8">

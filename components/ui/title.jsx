@@ -10,7 +10,9 @@ export default function Title({
     <div className="flex flex-col md:flex-row items-center justify-between">
       <div className="flex w-full md:w-1/5">{left}</div>
       <div className="flex-1 ">
-        <div className="flex-1 text-[48px] font-bold text-center">{title}</div>
+        <div className="flex-1 text-2xl md:text-[48px] font-bold text-center">
+          {title}
+        </div>
         <div className="text-base text-center">{subTitle}</div>
       </div>
       <div className="flex w-full md:w-1/5 justify-end">{right}</div>

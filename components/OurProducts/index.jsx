@@ -121,7 +121,17 @@ const productsNew = [
 
 export default function OurProducts() {
   const [active, setActive] = useState(BUTTON.BEST_SELLERS);
-  const [list, setList] = useState(products);
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    const init = async () => {
+      const data = await fetch("https://dummyjson.com/products?limit=6&skip=0");
+      const { products } = await data.json();
+      setList(products);
+    };
+
+    init();
+  }, []);
 
   useEffect(() => {
     setList(active === BUTTON.BEST_SELLERS ? products : productsNew);

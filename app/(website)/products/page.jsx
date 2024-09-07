@@ -19,7 +19,9 @@ export default async function Page({ searchParams }) {
   const search = searchParams?.search ?? "";
   const sortBy = searchParams?.sortBy ?? "";
   const order = searchParams?.order ?? "";
-  const page = +searchParams?.page ?? 1;
+  const page = +(searchParams?.page ?? 1);
+
+  console.log({ page });
 
   let urlAPI = "https://dummyjson.com/products";
 
@@ -45,9 +47,9 @@ export default async function Page({ searchParams }) {
       <Banner imageUrl="/images/banner2.png" classColor="text-primary-500" />
       <div className=" mt-10 max-w-7xl mx-auto">
         <FilterProducts />
-        <div className="grid grid-cols-4 mt-10 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 mt-10 gap-8">
           {products.map((item) => {
-            return <CardItem {...item} />;
+            return <CardItem key={item.id} {...item} />;
           })}
         </div>
 
@@ -57,7 +59,7 @@ export default async function Page({ searchParams }) {
               <PaginationPrevious href="#" />
             </PaginationItem>
             {new Array(Math.ceil(total / limit)).fill(0).map((_, index) => (
-              <PaginationItem>
+              <PaginationItem key={index}>
                 <PaginationLink
                   href={`?page=${index + 1}`}
                   isActive={page === index + 1}

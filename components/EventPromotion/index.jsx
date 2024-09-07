@@ -17,7 +17,7 @@ function EventPromotion() {
     },
   ];
   return (
-    <div className="mt-24 max-w-7xl mx-auto">
+    <div className="mt-24 max-w-7xl mx-auto px-2">
       <Title
         title="Event promotion"
         right={

@@ -48,7 +48,7 @@ export default function News() {
     <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 mt-20 gap-4 md:h-[400x]">
       <div className="flex flex-col justify-between col-span-2  py-10">
         <div className="flex flex-col gap-4 justify-center col-span-2">
-          <h2 className="text-4xl font-bold">Read what's new</h2>
+          <h2 className="text-4xl font-bold">Read what&apos;s new</h2>
           <p className="">
             Sint consequat in ipsum irure adipisicing dolore culpa incididunt.
             Veniam elit magna anim ipsum eiusmod eu

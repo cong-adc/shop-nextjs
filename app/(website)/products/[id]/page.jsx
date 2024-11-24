@@ -12,16 +12,36 @@ import {
 import ProductSlide from "@/components/ProductDetail/ProductSlide";
 import Link from "next/link";
 import ProductOrder from "@/components/ProductDetail/ProductOrder";
+import { cache } from 'react'
+
+
+const getProduct = cache(async (id) => {
+  const response = await fetch(`https://dummyjson.com/products/${id}`);
+  const product = await response.json();
+  return product;
+})
+
+export const generateMetadata = (metadata) => {
+  // get product metadata
+  return {
+    title: metadata.title,
+    description: metadata.description,
+    // openGraph: {
+    //   title: metadata.title,
+    //   description: metadata.description,
+    //   images: metadata.openGraph.images,
+    //   publicDate: metadata.openGraph.publicDate,
+    //...
+    // }
+  }
+}
 
 const ProductPage = async ({ params }) => {
   console.log("params", params);
 
   const { id } = params ?? {};
 
-  const reponse = await fetch(`https://dummyjson.com/products/${id}`);
-  const product = await reponse.json();
-
-  console.log("product", product);
+  const product = await getProduct(id);
 
   return (
     <div className="container mx-auto p-6">

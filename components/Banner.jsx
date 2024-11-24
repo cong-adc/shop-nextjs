@@ -27,7 +27,7 @@ export default function Banner({
         </h1>
         <p
           className={cn(
-            "text-[#323743] text-sm md:text-xl w-full md:w-[450px]",
+            "text-[#323743] text-sm md:text-xl w-full md:w-[450px] mt-5",
             classColor
           )}
         >

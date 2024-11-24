@@ -42,7 +42,7 @@ export default function Header() {
           <Image src="/images/logo.png" width={128} height={42} />
         </Link>
       </div>
-      <div className="relative">
+      <div className="md:hidden">
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="outline">
